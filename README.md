@@ -1,7 +1,7 @@
 # Pac-Man Labirinto
 
 <p align="center">
-  <img src="pacman_labyrinth/pacman_labyrinth/assets/other/banner_2.png" alt="Banner Pac-Man Labirinto" width="1000">
+  <img src="pacman_labyrinth/pacman_labyrinth/assets/other/banner_1.png" alt="Banner Pac-Man Labirinto" width="1000">
 </p>
 
 **Pac-Man Labirinto** é um framework didático em Python/Pygame para estudar algoritmos de busca em Inteligência Artificial. O Pac-Man deve encontrar o morango em um labirinto representado como um grid bidimensional. As paredes restringem a movimentação, o morango representa o objetivo, e os fantasmas são usados visualmente para representar a fronteira de exploração dos algoritmos.
