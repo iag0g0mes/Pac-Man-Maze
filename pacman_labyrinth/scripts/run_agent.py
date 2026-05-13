@@ -17,9 +17,11 @@ from pacman_labyrinth.agents.greedy import GreedyBestFirstAgent
 from pacman_labyrinth.agents.ucs import UCSAgent
 from pacman_labyrinth.config import MazeConfig
 from pacman_labyrinth.core.env import MazeEnv
+from pacman_labyrinth.agents.dijkstra import DijkstraAgent
 
 
 AGENTS = {
+    "dijkstra": DijkstraAgent,
     "bfs": BFSAgent,
     "dfs": DFSAgent,
     "ucs": UCSAgent,
