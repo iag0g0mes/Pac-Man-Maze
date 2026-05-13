@@ -26,13 +26,7 @@ A estrutura atual do projeto possui o código executável dentro da pasta `pacma
 
 ### Jogo com menu em Pygame
 
-A partir da raiz do projeto:
-
-```bash
-python pacman_labyrinth/main.py
-```
-
-Ou entrando na pasta do projeto:
+Entrando na pasta do projeto:
 
 ```bash
 cd pacman_labyrinth
@@ -40,12 +34,6 @@ python main.py
 ```
 
 ### Rodar um agente no terminal
-
-A partir da raiz do projeto:
-
-```bash
-python pacman_labyrinth/scripts/run_agent.py --map pacman_labyrinth/maps/maze_10x10.txt --agent random --max-steps 1000
-```
 
 A partir da pasta `pacman_labyrinth/`:
 
@@ -61,6 +49,7 @@ Agentes disponíveis no script de terminal:
 - `ucs`
 - `greedy`
 - `astar`
+- `dijkstra`
 
 Observação: `bfs`, `dfs`, `ucs`, `greedy` e `astar` são arquivos de atividade para implementação pelos estudantes. Enquanto estiverem com `NotImplementedError`, eles não executam no terminal nem no menu.
 
@@ -169,7 +158,9 @@ O mundo é modelado como um grid bidimensional. Cada célula pode representar:
 - `WALL = 1`: parede.
 - `EXIT = 2`: saída/objetivo.
 
-Na configuração padrão atual, o mapa completo e a posição do objetivo são conhecidos desde o início (`full_observability=True` e `known_goal=True`). O código também permite ativar observação parcial usando `MazeConfig(full_observability=False, known_goal=False)`.
+Na configuração padrão atual, o mapa completo e a posição do objetivo são conhecidos desde o início (`full_observability=True` e `known_goal=True`). 
+
+O código também permite ativar observação parcial usando `MazeConfig(full_observability=False, known_goal=False)`.
 
 ## Formato dos mapas
 
@@ -309,32 +300,7 @@ Implementar:
 - Greedy Best-First Search - Busca Gulosa.
 - A* - A-estrela.
 
-Para Greedy e A*, implemente também a heurística em `pacman_labyrinth/pacman_labyrinth/search/problems.py`. Uma opção inicial é a distância de Manhattan:
-
-```python
-def heuristic(self, pos: Position) -> int:
-    return abs(pos.row - self.goal.row) + abs(pos.col - self.goal.col)
-```
-
-## Testes
-
-A partir da pasta `pacman_labyrinth/`:
-
-```bash
-pytest -q
-```
-
-Também é possível testar rapidamente um agente pelo terminal:
-
-```bash
-python scripts/run_agent.py --map maps/maze_10x10.txt --agent random --max-steps 1000
-```
-
-Após implementar um algoritmo, substitua `random` pelo agente correspondente, por exemplo:
-
-```bash
-python scripts/run_agent.py --map maps/maze_10x10.txt --agent bfs --max-steps 1000
-```
+Para Greedy e A*, implemente também a heurística em `pacman_labyrinth/pacman_labyrinth/search/problems.py`. 
 
 ## Entrega sugerida
 
